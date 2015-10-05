@@ -2,7 +2,7 @@
 
 ## License
 
- <https://github.com/IstiN/smartphone/blob/master/LICENSE.txt>
+ <https://github.com/IstiN/schedule/blob/master/LICENSE>
 
     Copyright © 2015 Uladzimir Klyshevich.
 
