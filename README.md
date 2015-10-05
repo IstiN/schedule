@@ -1,5 +1,8 @@
 # schedule
 
+Android application and service that provide access to schedule from Android devices.
+
+
 ## License
 
  <https://github.com/IstiN/schedule/blob/master/LICENSE>
