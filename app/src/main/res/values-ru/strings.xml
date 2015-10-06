@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Расписание</string>
+    <string name="select_university_title">Выберите учебное заведение</string>
     <string name="action_settings">Настройки</string>
 </resources>

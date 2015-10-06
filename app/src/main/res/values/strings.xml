@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Schedule</string>
+    <string name="select_course_title">Select course</string>
+    <string name="select_faculty_title">Select faculty</string>
+    <string name="select_group_title">Select group</string>
+    <string name="select_lecturer_title">Select lecturer</string>
+    <string name="select_university_title">Select university</string>
     <string name="action_settings">Settings</string>
 </resources>

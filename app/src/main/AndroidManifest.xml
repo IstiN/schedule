@@ -13,14 +13,39 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".StartActivity"
             android:label="@string/app_name"
+            android:launchMode="singleTask"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            />
+        <activity
+            android:name=".SelectCourseActivity"
+            android:label="@string/select_course_title"
+            />
+        <activity
+            android:name=".SelectFacultyActivity"
+            android:label="@string/select_faculty_title"
+            />
+        <activity
+            android:name=".SelectGroupActivity"
+            android:label="@string/select_group_title"
+            />
+        <activity
+            android:name=".SelectLecturerActivity"
+            android:label="@string/select_lecturer_title"
+            />
+        <activity
+            android:name=".SelectUniversityActivity"
+            android:label="@string/select_university_title"
+            />
     </application>
 
 </manifest>
