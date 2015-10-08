@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">Расписание</string>
-    <string name="select_university_title">Выберите учебное заведение</string>
-    <string name="action_settings">Настройки</string>
+<string name="app_name">Расписание</string>
+<string name="select_university_title">Выберите учебное заведение</string>
+<string name="select_course_title">Выберите курс</string>
+<string name="select_faculty_title">Выберите факультет</string>
+<string name="select_group_title">Выберите группу</string>
+<string name="select_lecturer_title">Выберите преподавателя</string>
+<string name="action_settings">Настройки</string>
 </resources>
