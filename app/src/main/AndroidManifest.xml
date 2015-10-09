@@ -35,6 +35,10 @@
             android:label="@string/select_faculty_title"
             />
         <activity
+            android:name=".SelectFormActivity"
+            android:label="@string/select_form_title"
+            />
+        <activity
             android:name=".SelectGroupActivity"
             android:label="@string/select_group_title"
             />
