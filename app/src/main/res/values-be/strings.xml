@@ -3,6 +3,7 @@
     <string name="select_university_title">Выберыце навучальную установу</string>
     <string name="select_course_title">Выберыце курс</string>
     <string name="select_faculty_title">Выберыце факультэт</string>
+    <string name="select_form_title">Выберыце форму навучання</string>
     <string name="select_group_title">Выберыце групу</string>
     <string name="select_lecturer_title">Выберыце выкладчыка</string>
     <string name="action_settings">Налады</string>

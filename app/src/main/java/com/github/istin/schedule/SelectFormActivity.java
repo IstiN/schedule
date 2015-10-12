@@ -8,7 +8,7 @@ import android.view.View;
 /**
  * Created by uladzimir_klyshevich on 10/6/15.
  */
-public class SelectFacultyActivity extends AppCompatActivity {
+public class SelectFormActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,6 @@ public class SelectFacultyActivity extends AppCompatActivity {
     }
 
     public void onNextButtonClick(View pView) {
-        startActivity(new Intent(this, SelectFormActivity.class));
+        startActivity(new Intent(this, SelectCourseActivity.class));
     }
 }
