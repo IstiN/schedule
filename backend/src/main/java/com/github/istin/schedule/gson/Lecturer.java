@@ -1,24 +1,24 @@
-package com.github.istin.schedule.backend.gson;
+package com.github.istin.schedule.gson;
 
 /**
  * Created by uladzimir_klyshevich on 10/12/15.
  */
-public class UniversityModel {
+public class Lecturer {
 
-    private int id;
+    private String id;
 
     private String name;
 
-    public int getId() {
+    public String getId() {
         return id;
-    }
-
-    public void setId(int pId) {
-        id = pId;
     }
 
     public String getName() {
         return name;
+    }
+
+    public void setId(String pId) {
+        id = pId;
     }
 
     public void setName(String pName) {

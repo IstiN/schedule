@@ -1,7 +1,7 @@
 package com.github.istin.schedule.backend.adapter;
 
 import com.github.istin.schedule.backend.IUniversityAdapter;
-import com.github.istin.schedule.backend.gson.Lecturer;
+import com.github.istin.schedule.gson.Lecturer;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

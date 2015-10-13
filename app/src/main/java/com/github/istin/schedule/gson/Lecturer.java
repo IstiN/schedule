@@ -1,4 +1,4 @@
-package com.github.istin.schedule.backend.gson;
+package com.github.istin.schedule.gson;
 
 /**
  * Created by uladzimir_klyshevich on 10/12/15.

@@ -7,11 +7,10 @@
 package com.github.istin.schedule.backend.servlet;
 
 import com.github.istin.schedule.backend.University;
-import com.github.istin.schedule.backend.gson.UniversityModel;
+import com.github.istin.schedule.gson.UniversityModel;
 import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
