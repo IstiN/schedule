@@ -5,7 +5,7 @@
         <servlet-class>com.github.istin.schedule.backend.servlet.UniversityList</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>LectorList</servlet-name>
+        <servlet-name>LecturerList</servlet-name>
         <servlet-class>com.github.istin.schedule.backend.servlet.LecturerList</servlet-class>
     </servlet>
     <servlet-mapping>
@@ -13,8 +13,8 @@
         <url-pattern>/university_list</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>LectorList</servlet-name>
-        <url-pattern>/lector_list</url-pattern>
+        <servlet-name>LecturerList</servlet-name>
+        <url-pattern>/lecturer_list</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>

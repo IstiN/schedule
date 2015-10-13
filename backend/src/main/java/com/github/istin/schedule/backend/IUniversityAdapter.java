@@ -1,6 +1,6 @@
 package com.github.istin.schedule.backend;
 
-import com.github.istin.schedule.backend.gson.Lector;
+import com.github.istin.schedule.backend.gson.Lecturer;
 
 import java.util.List;
 
@@ -9,6 +9,6 @@ import java.util.List;
  */
 public interface IUniversityAdapter {
 
-    List<Lector> getLectorList() throws Exception;
+    List<Lecturer> getLecturerList() throws Exception;
 
 }

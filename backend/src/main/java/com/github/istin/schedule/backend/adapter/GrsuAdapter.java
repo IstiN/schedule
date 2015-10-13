@@ -1,18 +1,13 @@
 package com.github.istin.schedule.backend.adapter;
 
 import com.github.istin.schedule.backend.IUniversityAdapter;
-import com.github.istin.schedule.backend.gson.Lector;
+import com.github.istin.schedule.backend.gson.Lecturer;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,24 +16,24 @@ import java.util.List;
  */
 public class GrsuAdapter implements IUniversityAdapter {
 
-    public static final String URL_LECTORS = "http://raspisanie.grsu.by/TimeTable/UMUTeachers.aspx?Id=3";
+    public static final String URL_LECTURERS = "http://raspisanie.grsu.by/TimeTable/UMUTeachers.aspx?Id=3";
 
     @Override
-    public List<Lector> getLectorList() throws Exception {
-        Document doc = Jsoup.connect(URL_LECTORS).get();
+    public List<Lecturer> getLecturerList() throws Exception {
+        Document doc = Jsoup.connect(URL_LECTURERS).get();
         Elements elements = doc.select("#DropDownList1 option");
-        List<Lector> lectors = new ArrayList<>();
+        List<Lecturer> lecturers = new ArrayList<>();
         for (Element element : elements) {
             final String val = element.val();
             if ("0".equals(val)) {
                 continue;
             }
-            Lector lector = new Lector();
-            lector.setId(val);
-            lector.setName(element.text());
-            lectors.add(lector);
+            Lecturer lecturer = new Lecturer();
+            lecturer.setId(val);
+            lecturer.setName(element.text());
+            lecturers.add(lecturer);
         }
-        return lectors;
+        return lecturers;
     }
 
 }
