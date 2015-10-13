@@ -3,7 +3,7 @@ package com.github.istin.schedule.backend.gson;
 /**
  * Created by uladzimir_klyshevich on 10/12/15.
  */
-public class Lector {
+public class Lecturer {
 
     private String id;
 
