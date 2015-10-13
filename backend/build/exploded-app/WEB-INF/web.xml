@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
+    <servlet>
+        <servlet-name>UniversityList</servlet-name>
+        <servlet-class>com.github.istin.schedule.backend.servlet.UniversityList</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LecturerList</servlet-name>
+        <servlet-class>com.github.istin.schedule.backend.servlet.LecturerList</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UniversityList</servlet-name>
+        <url-pattern>/university_list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LecturerList</servlet-name>
+        <url-pattern>/lecturer_list</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>
