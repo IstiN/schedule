@@ -40,12 +40,12 @@ public class SelectLecturerActivity extends AppCompatActivity {
                     InputStreamReader inputStreamReader = null;
                     BufferedReader bufferedReader = null;
                     try {
-                        inputStream = HttpUtils.getInputStream(Api.LECTURER_LIST_API);
+                        inputStream = HttpUtils.getInputStream(Api.LECTURER_LIST);
                         inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
                         bufferedReader = new BufferedReader(inputStreamReader, 8192);
-                        final LecturerList lecturerList = new Gson().fromJson(bufferedReader, LecturerList.class);
-                        final LecturerModel[] lecturerModels = new Gson().fromJson(new Gson().toJson(lecturerList.getLecturers()),
-                                LecturerModel[].class);
+                        final LecturerModel[] lecturerModels = new Gson().fromJson(bufferedReader, LecturerModel[].class);
+
+                        System.out.println(lecturerModels.length);
 
                         runOnUiThread(new Runnable() {
                             @Override

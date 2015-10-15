@@ -8,6 +8,7 @@ package com.github.istin.schedule.backend.servlet;
 
 import com.github.istin.schedule.backend.University;
 import com.github.istin.schedule.gson.Lecturer;
+import com.github.istin.schedule.gson.LecturerModel;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class LecturerList extends HttpServlet {
+
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
@@ -25,7 +27,7 @@ public class LecturerList extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         final String id = req.getParameter("id");
         final University university = University.values()[Integer.valueOf(id)];
-        List<Lecturer> lecturerList = null;
+        List<LecturerModel> lecturerList = null;
         try {
             lecturerList = university.getUniversityAdapter().getLecturerList();
             resp.getWriter().print(new Gson().toJson(lecturerList));
