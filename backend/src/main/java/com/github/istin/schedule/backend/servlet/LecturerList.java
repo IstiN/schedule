@@ -7,7 +7,6 @@
 package com.github.istin.schedule.backend.servlet;
 
 import com.github.istin.schedule.backend.University;
-import com.github.istin.schedule.gson.Lecturer;
 import com.github.istin.schedule.gson.LecturerModel;
 import com.google.gson.Gson;
 

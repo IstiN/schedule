@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.github.istin.schedule.gson.LecturerList;
 import com.github.istin.schedule.gson.LecturerModel;
 import com.github.istin.schedule.utils.ConfigUtils;
 import com.github.istin.schedule.utils.HttpUtils;
@@ -44,8 +43,6 @@ public class SelectLecturerActivity extends AppCompatActivity {
                         inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
                         bufferedReader = new BufferedReader(inputStreamReader, 8192);
                         final LecturerModel[] lecturerModels = new Gson().fromJson(bufferedReader, LecturerModel[].class);
-
-                        System.out.println(lecturerModels.length);
 
                         runOnUiThread(new Runnable() {
                             @Override

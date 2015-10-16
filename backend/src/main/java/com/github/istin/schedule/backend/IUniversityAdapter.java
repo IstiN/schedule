@@ -1,6 +1,5 @@
 package com.github.istin.schedule.backend;
 
-import com.github.istin.schedule.gson.Lecturer;
 import com.github.istin.schedule.gson.LecturerModel;
 
 import java.util.List;

@@ -9,9 +9,10 @@ import java.util.List;
 public class LecturerList {
 
     private Integer count;
-    private List<LecturerModel> items = new ArrayList<LecturerModel>();
+    private List<LecturerModel> items;
 
     public LecturerList() {
+        items = new ArrayList<LecturerModel>();
     }
 
     public LecturerList(Integer count, List<LecturerModel> lecturerModels) {
