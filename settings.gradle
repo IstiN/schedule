@@ -1,1 +1,1 @@
-include ':app', ':backend', ':gson'
+include ':app', ':backend', ':domain'
