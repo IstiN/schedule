@@ -7,21 +7,21 @@ public class Lecturer {
 
     private String id;
 
-    private String name;
+    private String fullName;
 
     public String getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
     public void setId(String pId) {
         id = pId;
     }
 
-    public void setName(String pName) {
-        name = pName;
+    public void setFullName(String pFullName) {
+        fullName = pFullName;
     }
 }
