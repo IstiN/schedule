@@ -27,6 +27,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.3.1'
     compile 'org.apache.httpcomponents:httpclient:4.0-alpha4'
     compile 'org.jsoup:jsoup:1.7.2'
+    compile project(':domain')
 }
 
 appengine {

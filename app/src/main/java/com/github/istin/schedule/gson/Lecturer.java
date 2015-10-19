@@ -24,4 +24,10 @@ public class Lecturer {
     public void setName(String pName) {
         name = pName;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+
 }

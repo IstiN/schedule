@@ -24,4 +24,9 @@ public class UniversityModel {
     public void setName(String pName) {
         name = pName;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
