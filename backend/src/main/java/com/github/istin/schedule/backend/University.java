@@ -1,6 +1,6 @@
 package com.github.istin.schedule.backend;
 
-import com.github.istin.schedule.backend.adapter.GrsuAdapter;
+import com.github.istin.schedule.backend.adapter.grsu.GrsuAdapter;
 
 /**
  * Created by uladzimir_klyshevich on 10/12/15.

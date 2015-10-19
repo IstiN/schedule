@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.github.istin.schedule.gson.LecturerModel;
+import com.github.istin.schedule.gson.Lecturer;
 import com.github.istin.schedule.utils.ConfigUtils;
 import com.github.istin.schedule.utils.HttpUtils;
 import com.google.gson.Gson;
@@ -22,6 +22,8 @@ import java.io.InputStreamReader;
  */
 public class SelectLecturerActivity extends AppCompatActivity {
 
+    public static final String EXTRA_ID = "_id";
+
     private static final String DEBUG_TAG = SelectLecturerActivity.class.getSimpleName();
 
     private ListView mListView;
@@ -30,6 +32,7 @@ public class SelectLecturerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
+        final String id = getIntent().getStringExtra(EXTRA_ID);
         mListView = (ListView) findViewById(android.R.id.list);
         new Thread(new Runnable() {
             @Override
@@ -39,10 +42,10 @@ public class SelectLecturerActivity extends AppCompatActivity {
                     InputStreamReader inputStreamReader = null;
                     BufferedReader bufferedReader = null;
                     try {
-                        inputStream = HttpUtils.getInputStream(Api.LECTURER_LIST);
+                        inputStream = HttpUtils.getInputStream(Api.LECTURER_LIST + id);
                         inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
                         bufferedReader = new BufferedReader(inputStreamReader, 8192);
-                        final LecturerModel[] lecturerModels = new Gson().fromJson(bufferedReader, LecturerModel[].class);
+                        final Lecturer[] lecturerModels = new Gson().fromJson(bufferedReader, Lecturer[].class);
 
                         runOnUiThread(new Runnable() {
                             @Override

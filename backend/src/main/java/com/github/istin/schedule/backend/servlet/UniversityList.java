@@ -27,7 +27,7 @@ public class UniversityList extends HttpServlet {
         List<UniversityModel> universityModels = new ArrayList<>();
         for (University university : University.values()) {
             UniversityModel universityModel = new UniversityModel();
-            universityModel.setId(university.ordinal());
+            universityModel.setId(String.valueOf(university.ordinal()));
             universityModel.setName(university.getName());
             universityModels.add(universityModel);
         }
