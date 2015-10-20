@@ -13,7 +13,7 @@ public class Api {
 
     public static final String DEPARTMENT_LIST = BASE_URL + "getDepartments";
 
-    public static final String GROUP_LIST = BASE_URL + "getGroups" + "?departmentId=2&facultyId=3&course=4";
+    public static final String GROUP_LIST = BASE_URL + "getGroups"; // + "?departmentId=2&facultyId=3&course=4";
 
     public static final String LECTURER_SCHEDULE = BASE_URL + "getTeacherSchedule"; // + "?teacherId=132435&dateStart=18.10.2015&dateEnd=18.11.2015";
 
