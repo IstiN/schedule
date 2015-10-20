@@ -1,76 +1,41 @@
 package com.github.istin.schedule;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.github.istin.schedule.gson.Lecturer;
-import com.github.istin.schedule.utils.ConfigUtils;
-import com.github.istin.schedule.utils.HttpUtils;
-import com.google.gson.Gson;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.util.Random;
 
 /**
  * Created by uladzimir_klyshevich on 10/6/15.
  */
-public class SelectLecturerActivity extends AppCompatActivity {
+public class SelectLecturerActivity extends CommonHttpJobActivity<Lecturer[]> {
 
     public static final String EXTRA_ID = "_id";
 
-    private static final String DEBUG_TAG = SelectLecturerActivity.class.getSimpleName();
-
-    private ListView mListView;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select);
-        final String id = getIntent().getStringExtra(EXTRA_ID);
-        mListView = (ListView) findViewById(android.R.id.list);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    InputStream inputStream = null;
-                    InputStreamReader inputStreamReader = null;
-                    BufferedReader bufferedReader = null;
-                    try {
-                        inputStream = HttpUtils.getInputStream(Api.LECTURER_LIST + id);
-                        inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
-                        bufferedReader = new BufferedReader(inputStreamReader, 8192);
-                        final Lecturer[] lecturerModels = new Gson().fromJson(bufferedReader, Lecturer[].class);
-
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                mListView.setAdapter(
-                                        new ArrayAdapter<>(SelectLecturerActivity.this, android.R.layout.simple_list_item_1, lecturerModels)
-                                );
-                            }
-                        });
-                    } finally {
-                        HttpUtils.close(inputStream);
-                        HttpUtils.close(inputStreamReader);
-                        HttpUtils.close(bufferedReader);
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-
+    protected int getContentViewLayout() {
+        return R.layout.activity_select;
     }
 
-    public void onNextButtonClick(View pView) {
-        startActivity(new Intent(this, StartActivity.class));
-        ConfigUtils.saveConfig();
+    @Override
+    protected Class<Lecturer[]> getResultClass() {
+        return Lecturer[].class;
+    }
+
+    @Override
+    protected String getUrl() {
+        final String id = getIntent().getStringExtra(EXTRA_ID);
+        return Api.LECTURER_LIST + id;
+    }
+
+    @Override
+    protected void applyResult(Lecturer[] pLecturers) {
+        ListView listView = (ListView) findViewById(android.R.id.list);
+        listView.setAdapter(
+                new ArrayAdapter<>(SelectLecturerActivity.this, android.R.layout.simple_list_item_1, pLecturers)
+        );
     }
 
 }

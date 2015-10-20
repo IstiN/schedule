@@ -1,4 +1,4 @@
-package com.github.istin.schedule.utils;
+package com.github.istin.schedule.http;
 
 import java.io.Closeable;
 import java.io.IOException;
