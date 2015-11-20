@@ -11,4 +11,6 @@ public class Api {
 
     public static final String UNIVERSITY_LIST = BASE_URL + "university_list";
 
+    public static final String SCHEDULE_LIST = BASE_URL + "schedule_list?uid=%s&lid=%s";
+
 }

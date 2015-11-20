@@ -1,8 +1,8 @@
 package com.github.istin.schedule.backend;
 
 
-import com.github.istin.schedule.backend.adapter.grsu.domain.LessonModel;
 import com.github.istin.schedule.gson.Lecturer;
+import com.github.istin.schedule.gson.Lesson;
 
 import java.util.List;
 
@@ -13,5 +13,5 @@ public interface IUniversityAdapter {
 
     List<Lecturer> getLecturerList() throws Exception;
 
-    List<LessonModel.Optimized> getLecturerScheduleList(String pLid) throws Exception;
+    List<Lesson> getLecturerScheduleList(String pLid) throws Exception;
 }

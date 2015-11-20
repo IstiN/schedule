@@ -1,9 +1,11 @@
 package com.github.istin.schedule.gson;
 
+import java.io.Serializable;
+
 /**
  * Created by uladzimir_klyshevich on 10/12/15.
  */
-public class BaseModel {
+public class BaseModel implements Comparable<BaseModel>, Serializable {
 
     private String id;
 
@@ -28,5 +30,10 @@ public class BaseModel {
     @Override
     public String toString() {
         return name;
+    }
+
+    @Override
+    public int compareTo(BaseModel o) {
+        return toString().compareTo(o.toString());
     }
 }

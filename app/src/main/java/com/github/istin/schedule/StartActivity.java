@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.github.istin.schedule.utils.ConfigUtils;
+import com.github.istin.schedule.manager.ConfigurationManager;
 
 /**
  * Created by uladzimir_klyshevich on 10/6/15.
@@ -28,7 +28,7 @@ public class StartActivity extends Activity {
     }
 
     private void checkAndRedirect() {
-        if (ConfigUtils.isConfigured()) {
+        if (ConfigurationManager.get(this).isConfigured()) {
             startActivity(new Intent(this, MainActivity.class));
             finish();
         } else {

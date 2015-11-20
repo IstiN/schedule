@@ -7,4 +7,6 @@
     <string name="select_lecturer_title">Select lecturer</string>
     <string name="select_university_title">Select university</string>
     <string name="action_settings">Settings</string>
+    <string name="search_lecturer_hint">Input lecturer name</string>
+    <string name="search_university_hint">Input university name</string>
 </resources>

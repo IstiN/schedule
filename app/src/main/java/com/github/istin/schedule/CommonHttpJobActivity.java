@@ -3,10 +3,14 @@ package com.github.istin.schedule;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.StringRes;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
 
 import com.github.istin.schedule.http.HttpJob;
 import com.github.istin.schedule.manager.ThreadManager;
@@ -16,15 +20,18 @@ import com.github.istin.schedule.manager.ThreadManager;
  */
 public abstract class CommonHttpJobActivity<Result> extends AppCompatActivity implements ThreadManager.IExecutionListener<Result> {
 
+    private EditText mSearchEditText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getContentViewLayout());
+        mSearchEditText = (EditText) findViewById(R.id.search_edit_text);
         execute();
     }
 
     private void execute() {
-        new ThreadManager().execute(new HttpJob<>(getUrl(), getResultClass()), this);
+        ThreadManager.get(this).execute(new HttpJob<>(getUrl(), getResultClass()), this);
     }
 
     @LayoutRes
@@ -73,5 +80,25 @@ public abstract class CommonHttpJobActivity<Result> extends AppCompatActivity im
                         finish();
                     }
                 }).create().show();
+    }
+
+    protected void initFilter(final ArrayAdapter pArrayAdapter, @StringRes int hintRes) {
+        mSearchEditText.setHint(hintRes);
+        mSearchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                pArrayAdapter.getFilter().filter(s.toString());
+            }
+        });
     }
 }

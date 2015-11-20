@@ -9,6 +9,7 @@ package com.github.istin.schedule.backend.servlet;
 import com.github.istin.schedule.backend.University;
 import com.github.istin.schedule.backend.adapter.grsu.domain.LessonModel;
 import com.github.istin.schedule.gson.Lecturer;
+import com.github.istin.schedule.gson.Lesson;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -28,7 +29,7 @@ public class ScheduleList extends HttpServlet {
         final String uid = req.getParameter("uid");
         final String lid = req.getParameter("lid");
         final University university = University.values()[Integer.valueOf(uid)];
-        List<LessonModel.Optimized> lessonModelList = null;
+        List<Lesson> lessonModelList = null;
         try {
             lessonModelList = university.getUniversityAdapter().getLecturerScheduleList(lid);
             //TODO add sort option based on parameter

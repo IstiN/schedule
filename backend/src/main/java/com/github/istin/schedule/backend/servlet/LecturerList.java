@@ -11,6 +11,7 @@ import com.github.istin.schedule.gson.Lecturer;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.http.HttpServlet;
@@ -29,7 +30,7 @@ public class LecturerList extends HttpServlet {
         List<Lecturer> lecturerList = null;
         try {
             lecturerList = university.getUniversityAdapter().getLecturerList();
-            //TODO add sort option based on parameter
+            Collections.sort(lecturerList);
             resp.getWriter().print(new Gson().toJson(lecturerList));
         } catch (Exception e) {
             throw new IOException(e);

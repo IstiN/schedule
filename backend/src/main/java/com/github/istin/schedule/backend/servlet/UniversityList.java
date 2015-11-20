@@ -6,12 +6,12 @@
 
 package com.github.istin.schedule.backend.servlet;
 
-import com.github.istin.schedule.backend.University;
-import com.github.istin.schedule.gson.UniversityModel;
+import com.github.istin.schedule.gson.University;
 import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.http.HttpServlet;
@@ -24,14 +24,15 @@ public class UniversityList extends HttpServlet {
             throws IOException {
         resp.setContentType("application/json");
         resp.setCharacterEncoding("UTF-8");
-        List<UniversityModel> universityModels = new ArrayList<>();
-        for (University university : University.values()) {
-            UniversityModel universityModel = new UniversityModel();
+        List<University> universities = new ArrayList<>();
+        for (com.github.istin.schedule.backend.University university : com.github.istin.schedule.backend.University.values()) {
+            University universityModel = new University();
             universityModel.setId(String.valueOf(university.ordinal()));
             universityModel.setName(university.getName());
-            universityModels.add(universityModel);
+            universities.add(universityModel);
         }
-        resp.getWriter().print(new Gson().toJson(universityModels));
+        Collections.sort(universities);
+        resp.getWriter().print(new Gson().toJson(universities));
     }
 
     @Override

@@ -7,6 +7,7 @@ import com.github.istin.schedule.backend.adapter.grsu.domain.LessonModel;
 import com.github.istin.schedule.backend.adapter.grsu.domain.LessonsResponse;
 import com.github.istin.schedule.backend.utils.HttpUtils;
 import com.github.istin.schedule.gson.Lecturer;
+import com.github.istin.schedule.gson.Lesson;
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
@@ -59,7 +60,7 @@ public class GrsuAdapter implements IUniversityAdapter {
     }
 
     @Override
-    public List<LessonModel.Optimized> getLecturerScheduleList(String pLid) throws Exception {
+    public List<Lesson> getLecturerScheduleList(String pLid) throws Exception {
         InputStream inputStream = null;
         InputStreamReader inputStreamReader = null;
         BufferedReader bufferedReader = null;
@@ -69,7 +70,7 @@ public class GrsuAdapter implements IUniversityAdapter {
             bufferedReader = new BufferedReader(inputStreamReader, 8192);
             final LessonsResponse scheduleList = new Gson().fromJson(bufferedReader, LessonsResponse.class);
             final List<LessonModel> lessons = scheduleList.getLessons();
-            List<LessonModel.Optimized> list = new ArrayList<>();
+            List<Lesson> list = new ArrayList<>();
             if (lessons != null) {
                 for (LessonModel lessonModel : lessons) {
                     list.add(lessonModel.doOptimize());
